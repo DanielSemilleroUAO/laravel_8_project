@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AnimalesController;
+use App\Http\Controllers\PlantasController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
+});
+
+Route::controller(AnimalesController::class)->group(function () {
+    Route::get('/animales', 'index');
+});
+
+Route::controller(PlantasController::class)->group(function () {
+    Route::get('/plantas', 'index');
 });

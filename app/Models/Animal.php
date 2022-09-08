@@ -9,6 +9,9 @@ class Animal extends Model
 {
     use HasFactory;
     protected $table = 'animales';
-
     
+    public function getGenero()
+    {
+        return $this->hasOne(Genero::class, 'id', 'unidades_medida_id');
+    }
 }

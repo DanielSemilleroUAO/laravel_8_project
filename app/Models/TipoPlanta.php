@@ -9,4 +9,9 @@ class TipoPlanta extends Model
 {
     use HasFactory;
     protected $table = 'tipo_planta';
+
+    public function planta()
+    {
+        return $this->belongsTo(Planta::class);
+    }
 }
